@@ -1,0 +1,89 @@
+@import "./tokens.css";
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-feature-settings: "palt";
+  letter-spacing: 0.04em;
+}
+
+h1 { font-size: 32px; font-weight: 700; line-height: 1.5; }
+h2 { font-size: 24px; font-weight: 700; line-height: 1.4; }
+h3 { font-size: 18px; font-weight: 600; line-height: 1.5; }
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+/* Slide down animation for custom input */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 400px;
+    transform: translateY(0);
+  }
+}
+
+.slide-down {
+  animation: slideDown 0.25s ease forwards;
+}
+
+/* Confetti placeholder (canvas-confetti renders to body) */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Choice card hover/selected states */
+.choice-card {
+  transition: all 0.15s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-1px);
+}
+
+.choice-card.selected {
+  transform: scale(1.02);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-soft);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}

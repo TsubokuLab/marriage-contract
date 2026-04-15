@@ -1,0 +1,43 @@
+:root {
+  /* Base (note由来) */
+  --text-primary:    #08131a;
+  --text-secondary:  rgba(8, 19, 26, 0.66);
+  --bg-primary:      #ffffff;
+  --bg-secondary:    #fff5f7;
+  --border-default:  rgba(8, 19, 26, 0.14);
+
+  /* Accent (カスタム) */
+  --accent-primary:  #ff6b9d;
+  --accent-soft:     #ffd6e3;
+  --accent-warm:     #ffb88c;
+  --accent-mint:     #5ac8b8;
+  --accent-cream:    #fff8e7;
+
+  /* Semantic */
+  --success:  #1e7b65;
+  --danger:   #b22323;
+  --caution:  #916626;
+
+  /* Chapter colors */
+  --chapter-1-bg: #fff0f5;
+  --chapter-2-bg: #fff8e7;
+  --chapter-3-bg: #f0f8ff;
+  --chapter-4-bg: #f0fff4;
+  --chapter-5-bg: #fdf0ff;
+  --chapter-6-bg: #fff5ee;
+  --chapter-7-bg: #f5f5ff;
+
+  /* Typography */
+  --font-sans: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    Arial, "Noto Sans JP", Meiryo, sans-serif;
+
+  /* Radius */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-pill: 9999px;
+
+  /* Shadow */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-btn:  0 4px 12px rgba(255, 107, 157, 0.25);
+}

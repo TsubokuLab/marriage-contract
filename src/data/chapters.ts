@@ -1,0 +1,60 @@
+import type { Chapter } from "../types/contract";
+
+export const CHAPTERS: Chapter[] = [
+  {
+    number: 1,
+    title: "財産・経済",
+    emoji: "💰",
+    description: "お金のことは大事！二人の財産管理について決めておきましょう。",
+    bgColor: "#fff0f5",
+    category: "財産",
+  },
+  {
+    number: 2,
+    title: "家事・生活",
+    emoji: "🏠",
+    description: "毎日の暮らしを快適に。家事や生活スタイルについて話し合いましょう。",
+    bgColor: "#fff8e7",
+    category: "家事",
+  },
+  {
+    number: 3,
+    title: "親族・家族",
+    emoji: "👨‍👩‍👧‍👦",
+    description: "お互いの家族との関係について確認しておきましょう。",
+    bgColor: "#f0f8ff",
+    category: "親族",
+  },
+  {
+    number: 4,
+    title: "子育て",
+    emoji: "👶",
+    description: "お子さんのことについて、二人の考えを共有しましょう。",
+    bgColor: "#f0fff4",
+    category: "子育て",
+  },
+  {
+    number: 5,
+    title: "相互の尊重",
+    emoji: "🤝",
+    description: "お互いを大切にするためのルールを確認しましょう。",
+    bgColor: "#fdf0ff",
+    category: "尊重",
+  },
+  {
+    number: 6,
+    title: "住宅・不動産",
+    emoji: "🏡",
+    description: "住まいに関することを決めておきましょう。",
+    bgColor: "#fff5ee",
+    category: "住宅",
+  },
+  {
+    number: 7,
+    title: "その他",
+    emoji: "📋",
+    description: "相続・離婚・紛争解決など、万一のときのための取り決めです。",
+    bgColor: "#f5f5ff",
+    category: "その他",
+  },
+];
