@@ -32,7 +32,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "婚前財産を明確にしておくと、万一の際の財産分与でトラブルを防げます。",
         choices: [
-          { id: "own", label: "それぞれの固有財産とする（人気）", value: "own" },
+          { id: "own", label: "それぞれの固有財産とする（標準）", value: "own" },
           { id: "share", label: "婚姻後は共有財産とする", value: "share" },
           { id: "list", label: "別途リストアップして決める", value: "list" },
         ],
@@ -75,7 +75,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "収入差がある場合は「収入に応じて負担」がトラブルになりにくい傾向があります。",
         choices: [
-          { id: "by-income", label: "収入に応じた割合で負担する（人気）", value: "by-income" },
+          { id: "by-income", label: "収入に応じた割合で負担する（標準）", value: "by-income" },
           { id: "half", label: "半額ずつ負担する", value: "half" },
           { id: "one-side", label: "一方が全額負担する", value: "one-side" },
           { id: "joint-account", label: "共同口座を設けて負担する", value: "joint-account" },
@@ -243,7 +243,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "婚前の借金は原則として個人の債務ですが、明記しておくと安心です。",
         choices: [
-          { id: "own-debt", label: "それぞれの婚前の債務は各自が責任を持つ（人気）", value: "own-debt" },
+          { id: "own-debt", label: "それぞれの婚前の債務は各自が責任を持つ（標準）", value: "own-debt" },
           { id: "share-debt", label: "婚姻後は共同で返済する", value: "share-debt" },
           { id: "not-applicable", label: "個人の借金・ローンはない", value: "not-applicable" },
         ],
@@ -284,7 +284,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "専業期間中の財産形成が不公平にならないよう、事前に取り決めておくと安心です。",
         choices: [
-          { id: "share-all", label: "専業期間中も収入は共有財産とする（人気）", value: "share-all" },
+          { id: "share-all", label: "専業期間中も収入は共有財産とする", value: "share-all" },
           { id: "allowance", label: "専業側に生活費・小遣いを支給する", value: "allowance" },
           { id: "separate", label: "就業側の収入は就業側の固有財産とする", value: "separate" },
         ],
@@ -325,7 +325,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "財産分与は離婚時に重要な問題です。事前に方針を決めておくと紛争を防げます。",
         choices: [
-          { id: "equal", label: "婚姻後の共有財産は折半する（人気）", value: "equal" },
+          { id: "equal", label: "婚姻後の共有財産は折半する（標準）", value: "equal" },
           { id: "contribution", label: "貢献度・収入比に応じて分ける", value: "contribution" },
           { id: "negotiate", label: "その時点で誠実に協議する", value: "negotiate" },
         ],
@@ -368,7 +368,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "家事分担を明確にしておくと、生活が始まってからの不満が軽減されます。",
         choices: [
-          { id: "equal-housework", label: "等分に分担する（人気）", value: "equal-housework" },
+          { id: "equal-housework", label: "等分に分担する", value: "equal-housework" },
           { id: "role-based", label: "得意分野・役割分担に応じて決める", value: "role-based" },
           { id: "one-side", label: "一方が主に担当する", value: "one-side" },
           { id: "outsource", label: "家事代行サービスを活用する", value: "outsource" },
@@ -412,7 +412,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "キャリアに関する考え方をすり合わせておくと、将来の転職・転勤時に意見の食い違いが防げます。",
         choices: [
-          { id: "mutual-support", label: "お互いのキャリアを最大限尊重・支援し合う（人気）", value: "mutual-support" },
+          { id: "mutual-support", label: "お互いのキャリアを最大限尊重・支援し合う", value: "mutual-support" },
           { id: "discuss-case-by-case", label: "大きな変化は都度二人で話し合って決める", value: "discuss-case-by-case" },
         ],
       },
@@ -496,7 +496,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "介護問題は予測が難しく、柔軟な対応が重要です。方針だけでも決めておきましょう。",
         choices: [
-          { id: "own-parents", label: "それぞれの親はそれぞれが主担当、パートナーがサポートする（人気）", value: "own-parents" },
+          { id: "own-parents", label: "それぞれの親はそれぞれが主担当、パートナーがサポートする", value: "own-parents" },
           { id: "together", label: "二人で協力して双方の親を支える", value: "together" },
           { id: "professional", label: "介護サービス・施設を積極的に利用する", value: "professional" },
           { id: "discuss", label: "必要になった時点で話し合って決める", value: "discuss" },
@@ -540,7 +540,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "親族との付き合い方は価値観の違いが出やすい分野です。基本方針を決めておきましょう。",
         choices: [
-          { id: "respect-both", label: "お互いの親族を尊重し、関係を大切にする（人気）", value: "respect-both" },
+          { id: "respect-both", label: "お互いの親族を尊重し、関係を大切にする", value: "respect-both" },
           { id: "independent", label: "それぞれが自分の親族と主体的に関わる", value: "independent" },
           { id: "discuss", label: "具体的な付き合い方は都度話し合う", value: "discuss" },
         ],
@@ -624,7 +624,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "育児分担を事前に決めておくと、産後の育児疲れによる関係悪化を防げます。",
         choices: [
-          { id: "equal-childcare", label: "二人で等分に分担する（人気）", value: "equal-childcare" },
+          { id: "equal-childcare", label: "二人で等分に分担する", value: "equal-childcare" },
           { id: "role-based", label: "得意分野や時間帯で役割分担する", value: "role-based" },
           { id: "discuss", label: "生まれてから話し合って決める", value: "discuss" },
         ],
@@ -665,7 +665,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "教育方針は価値観の違いが出やすい分野です。大枠の方向性だけでも揃えておきましょう。",
         choices: [
-          { id: "child-first", label: "子供の意思・個性を最優先に考える（人気）", value: "child-first" },
+          { id: "child-first", label: "子供の意思・個性を最優先に考える", value: "child-first" },
           { id: "discuss", label: "その都度二人で話し合って決める", value: "discuss" },
           { id: "public", label: "公教育を基本とし、習い事は子供の希望に応じて検討", value: "public" },
         ],
@@ -706,7 +706,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "法律的には親権・養育費は離婚時に改めて決めますが、基本方針を持っておくと平和的解決につながります。",
         choices: [
-          { id: "negotiate", label: "子供の最善の利益を最優先に誠実に話し合う（人気）", value: "negotiate" },
+          { id: "negotiate", label: "子供の最善の利益を最優先に誠実に話し合う", value: "negotiate" },
           { id: "joint", label: "共同親権を基本に、養育費は収入に応じて決める", value: "joint" },
         ],
       },
@@ -746,7 +746,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 200,
         hint: "パートナーを尊重しながら自分自身も大切にする。それが長続きする関係の秘訣です。",
         choices: [
-          { id: "respect-freedom", label: "お互いの個人的な趣味・友人関係を尊重し合う（人気）", value: "respect-freedom" },
+          { id: "respect-freedom", label: "お互いの個人的な趣味・友人関係を尊重し合う", value: "respect-freedom" },
           { id: "discuss", label: "都度話し合いながら調整する", value: "discuss" },
         ],
       },
@@ -838,7 +838,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 200,
         hint: "心の健康を大切にすることが、長続きするパートナーシップの基盤です。",
         choices: [
-          { id: "support-mental", label: "お互いの心身の健康を気にかけ、専門家への相談を勧め合う（人気）", value: "support-mental" },
+          { id: "support-mental", label: "お互いの心身の健康を気にかけ、専門家への相談を勧め合う", value: "support-mental" },
           { id: "discuss", label: "必要が生じた際に話し合う", value: "discuss" },
         ],
       },
@@ -876,7 +876,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "持分割合は出資割合に合わせるのが一般的です。将来の売却時に重要になります。",
         choices: [
-          { id: "equal-share", label: "折半で共有する（人気）", value: "equal-share" },
+          { id: "equal-share", label: "折半で共有する", value: "equal-share" },
           { id: "by-contribution", label: "出資・ローン負担割合に応じて持分を決める", value: "by-contribution" },
           { id: "one-side", label: "一方の単独所有とする", value: "one-side" },
           { id: "not-planning", label: "住宅購入の予定はない・賃貸でいく", value: "not-planning" },
@@ -920,7 +920,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "住宅ローンが残っている場合の離婚は複雑になりがちです。基本方針を持っておきましょう。",
         choices: [
-          { id: "sell", label: "売却して残額を分配する（人気）", value: "sell" },
+          { id: "sell", label: "売却して残額を分配する", value: "sell" },
           { id: "one-side-takeover", label: "一方が継続居住し、ローンを引き継ぐ", value: "one-side-takeover" },
           { id: "discuss", label: "その時点で誠実に話し合う", value: "discuss" },
         ],
@@ -963,8 +963,8 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "法定相続では配偶者が最低でも2分の1を相続しますが、意思を明確にするには遺言書が重要です。",
         choices: [
-          { id: "will-plan", label: "将来的に遺言書を作成し、意思を明確にする（人気）", value: "will-plan" },
-          { id: "legal", label: "法定相続に従う", value: "legal" },
+          { id: "will-plan", label: "将来的に遺言書を作成し、意思を明確にする", value: "will-plan" },
+          { id: "legal", label: "法定相続に従う（標準）", value: "legal" },
           { id: "discuss", label: "その都度話し合って決める", value: "discuss" },
         ],
       },
@@ -1004,7 +1004,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "困難な状況でも、まず対話を試みる姿勢が関係を救うことがあります。",
         choices: [
-          { id: "mediation-first", label: "まずはカウンセリング・調停を試みる（人気）", value: "mediation-first" },
+          { id: "mediation-first", label: "まずはカウンセリング・調停を試みる", value: "mediation-first" },
           { id: "cool-off", label: "冷静になる期間を設け、それでも解決しない場合は法的手続きへ", value: "cool-off" },
           { id: "legal", label: "合意できない場合は法的手続きによる", value: "legal" },
         ],
@@ -1060,7 +1060,7 @@ export const CLAUSES: Clause[] = [
         customMaxLength: 300,
         hint: "紛争解決の手続きをあらかじめ決めておくと、感情的になりにくくなります。",
         choices: [
-          { id: "negotiation-first", label: "まず両者で誠実に話し合い、解決しない場合は法的手続きへ（人気）", value: "negotiation-first" },
+          { id: "negotiation-first", label: "まず両者で誠実に話し合い、解決しない場合は法的手続きへ", value: "negotiation-first" },
           { id: "mediation", label: "第三者（弁護士・調停機関等）を交えて解決する", value: "mediation" },
         ],
       },
