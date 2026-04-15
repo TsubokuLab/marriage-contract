@@ -103,12 +103,13 @@ export function Preview() {
           </p>
           <ul className="space-y-1">
             <li>
-              <a
-                href="#meta"
-                className="block text-sm text-[rgba(8,19,26,0.6)] hover:text-[#ff6b9d] py-1 transition-colors"
+              <button
+                type="button"
+                onClick={() => navigate("/wizard", { state: { step: "meta" } })}
+                className="block text-sm text-[rgba(8,19,26,0.6)] hover:text-[#ff6b9d] py-1 transition-colors w-full text-left"
               >
                 基本情報
-              </a>
+              </button>
             </li>
             {includedChapters.map((chNum) => {
               const chapter = CHAPTERS.find((c) => c.number === chNum);
@@ -124,14 +125,6 @@ export function Preview() {
                 </li>
               );
             })}
-            <li>
-              <a
-                href="#signature"
-                className="block text-sm text-[rgba(8,19,26,0.6)] hover:text-[#ff6b9d] py-1 transition-colors"
-              >
-                署名
-              </a>
-            </li>
           </ul>
 
           {/* Edit button */}

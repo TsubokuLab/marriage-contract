@@ -221,7 +221,8 @@ export function Wizard() {
   const navigate = useNavigate();
   const location = useLocation();
   const [step, setStep] = useState<Step>(() => {
-    const state = location.state as { chapterNumber?: number } | null;
+    const state = location.state as { chapterNumber?: number; step?: string } | null;
+    if (state?.step === "meta") return "meta";
     if (state?.chapterNumber) return { chapterNumber: state.chapterNumber };
     return "intro";
   });
@@ -270,7 +271,7 @@ export function Wizard() {
           </div>
         )}
         {typeof step === "object" && "chapterNumber" in step && (
-          <ChapterStep chapterNumber={step.chapterNumber} />
+          <ChapterStep key={step.chapterNumber} chapterNumber={step.chapterNumber} />
         )}
       </div>
 
@@ -288,6 +289,17 @@ export function Wizard() {
           </Button>
 
           <div className="flex items-center gap-2">
+            {step === "meta" && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setStep({ chapterNumber: 1 })}
+                className="flex items-center gap-1 text-sm text-[rgba(8,19,26,0.45)]"
+              >
+                <SkipForward size={14} />
+                スキップ
+              </Button>
+            )}
             <Button
               variant="secondary"
               onClick={() => navigate("/preview")}
