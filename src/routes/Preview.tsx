@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Share2, Download, ChevronLeft, Pencil } from "lucide-react";
+import { Share2, Download, Pencil } from "lucide-react";
 import confetti from "canvas-confetti";
 import { Button } from "../components/ui/Button";
 import { ShareModal } from "../components/share/ShareModal";
@@ -76,15 +76,14 @@ export function Preview() {
       {/* Header */}
       <div className="sticky top-0 z-30 bg-white/90 backdrop-blur-sm border-b border-[rgba(8,19,26,0.08)]">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => navigate("/wizard")}
-            className="flex items-center gap-1"
+          <button
+            type="button"
+            onClick={() => navigate("/")}
+            className="flex items-center gap-1.5 font-semibold text-[#08131a] hover:text-[#ff6b9d] transition-colors"
           >
-            <ChevronLeft size={16} />
-            編集に戻る
-          </Button>
+            <span className="text-lg">💍</span>
+            <span className="text-sm">婚前契約書ジェネレーター</span>
+          </button>
           <div className="flex items-center gap-2">
             <Button
               variant="secondary"

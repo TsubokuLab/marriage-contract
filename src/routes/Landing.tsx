@@ -9,37 +9,38 @@ import { useContract } from "../state/ContractContext";
 export function Landing() {
   const navigate = useNavigate();
   const { reset } = useContract();
-  const [showResumeModal, setShowResumeModal] = useState(false);
+  const [showOverwriteModal, setShowOverwriteModal] = useState(false);
 
   useEffect(() => {
     // URLパラメータがある場合はウィザードへ直接
     const params = new URLSearchParams(window.location.search);
     if (params.has("d")) {
       navigate("/wizard");
-      return;
-    }
-    // LocalStorage に保存データがある場合はモーダルを表示
-    if (hasStoredData()) {
-      setShowResumeModal(true);
     }
   }, [navigate]);
 
+  // 「はじめる」: 保存データがあれば上書き確認、なければそのまま開始
   function handleStart() {
+    if (hasStoredData()) {
+      setShowOverwriteModal(true);
+    } else {
+      reset();
+      clearStorage();
+      navigate("/wizard");
+    }
+  }
+
+  // 上書き確認モーダルで「新しく始める」
+  function handleConfirmOverwrite() {
     reset();
     clearStorage();
+    setShowOverwriteModal(false);
     navigate("/wizard");
   }
 
+  // 「続きから始める」: プレビュー画面へ直接
   function handleResume() {
-    setShowResumeModal(false);
-    navigate("/wizard");
-  }
-
-  function handleStartFresh() {
-    reset();
-    clearStorage();
-    setShowResumeModal(false);
-    navigate("/wizard");
+    navigate("/preview");
   }
 
   const features = [
@@ -115,7 +116,7 @@ export function Landing() {
               はじめる
             </Button>
             {hasStoredData() && (
-              <Button size="lg" variant="secondary" onClick={() => setShowResumeModal(true)}>
+              <Button size="lg" variant="secondary" onClick={handleResume}>
                 続きから再開する
               </Button>
             )}
@@ -195,21 +196,22 @@ export function Landing() {
         </div>
       </footer>
 
-      {/* Resume Modal */}
+      {/* Overwrite confirmation Modal */}
       <Modal
-        isOpen={showResumeModal}
-        onClose={() => setShowResumeModal(false)}
-        title="前回の続きがあります"
+        isOpen={showOverwriteModal}
+        onClose={() => setShowOverwriteModal(false)}
+        title="⚠️ 前回の入力内容があります"
       >
         <p className="text-[rgba(8,19,26,0.66)] mb-6 leading-relaxed">
-          前回入力した内容が保存されています。続きから始めますか？
+          前回入力した内容がブラウザに保存されています。<br />
+          新しく始めると上書きされますが、よろしいですか？
         </p>
         <div className="flex flex-col gap-3">
-          <Button onClick={handleResume} className="w-full">
-            続きから始める
+          <Button onClick={handleConfirmOverwrite} className="w-full">
+            上書きして新しく始める
           </Button>
-          <Button variant="ghost" onClick={handleStartFresh} className="w-full">
-            最初からやり直す
+          <Button variant="ghost" onClick={() => setShowOverwriteModal(false)} className="w-full">
+            キャンセル
           </Button>
         </div>
       </Modal>
