@@ -45,12 +45,17 @@ export async function downloadPdf(data: ContractData): Promise<void> {
   }
 
   let clausesHtml = "";
+  let newChapterNum = 0;
+  let newArticleNum = 0;
   for (const [chNum, clauses] of Object.entries(chapters)) {
     const chNumber = Number(chNum);
+    newChapterNum++;
     clausesHtml += `
-      <div style="font-size:12pt;font-weight:700;border-left:4px solid #c45;padding:0 10px 16px 10px;margin:20px 0 10px;background:#fff5f7;line-height:1.5;box-sizing:border-box;">第${chNumber}章　${chapterTitles[chNumber] || ""}</div>`;
+      <div style="font-size:12pt;font-weight:700;border-left:4px solid #c45;padding:0 10px 16px 10px;margin:20px 0 10px;background:#fff5f7;line-height:1.5;box-sizing:border-box;">第${newChapterNum}章　${chapterTitles[chNumber] || ""}</div>`;
     for (const clause of clauses) {
-      const text = clause.template(answers, clauseMeta);
+      newArticleNum++;
+      const text = clause.template(answers, clauseMeta)
+        .replace(/^第\d+条/, `第${newArticleNum}条`);
       const lines = text.split("\n");
       const title = lines[0] || "";
       const body = lines.slice(1).join("\n");

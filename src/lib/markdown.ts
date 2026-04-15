@@ -64,11 +64,16 @@ export function generateMarkdown(data: ContractData): string {
     7: "その他",
   };
 
+  let newChapterNum = 0;
+  let newArticleNum = 0;
   for (const [chNum, { clauses }] of Object.entries(chapters)) {
     const chNumber = Number(chNum);
-    lines.push(`\n## 第${chNumber}章　${chapterTitles[chNumber] || ""}\n`);
+    newChapterNum++;
+    lines.push(`\n## 第${newChapterNum}章　${chapterTitles[chNumber] || ""}\n`);
     for (const clause of clauses) {
-      const text = clause.template(answers, clauseMeta);
+      newArticleNum++;
+      const text = clause.template(answers, clauseMeta)
+        .replace(/^第\d+条/, `第${newArticleNum}条`);
       lines.push(text + "\n");
     }
   }

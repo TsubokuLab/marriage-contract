@@ -59,6 +59,18 @@ export function Preview() {
 
   const includedChapters = Object.keys(chapterClauses).map(Number).sort((a, b) => a - b);
 
+  // 出力時の連番振り直し（欠番なし）
+  const chapterRenumber: Record<number, number> = {};
+  const articleRenumber: Record<string, number> = {};
+  let newChIdx = 0;
+  let newArtIdx = 0;
+  for (const chNum of includedChapters) {
+    chapterRenumber[chNum] = ++newChIdx;
+    for (const clause of chapterClauses[chNum]) {
+      articleRenumber[clause.id] = ++newArtIdx;
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#fff5f7]">
       {/* Header */}
@@ -120,7 +132,7 @@ export function Preview() {
                     onClick={() => navigate("/wizard", { state: { chapterNumber: chNum } })}
                     className="block text-sm text-[rgba(8,19,26,0.6)] hover:text-[#ff6b9d] py-1 transition-colors w-full text-left"
                   >
-                    {chapter?.emoji} 第{chNum}章　{chapter?.title}
+                    {chapter?.emoji} 第{chapterRenumber[chNum]}章　{chapter?.title}
                   </button>
                 </li>
               );
@@ -207,16 +219,17 @@ export function Preview() {
                     style={{ background: chapter?.bgColor ?? "#fff0f5" }}
                   >
                     <h2 className="text-lg font-bold text-[#08131a]">
-                      {chapter?.emoji} 第{chNum}章　{chapter?.title}
+                      {chapter?.emoji} 第{chapterRenumber[chNum]}章　{chapter?.title}
                     </h2>
                   </div>
                   <div className="space-y-5">
                     {clauses.map((clause) => {
                       const text = clause.template(answers, clauseMeta);
                       const [titleLine, ...bodyLines] = text.split("\n");
+                      const renumberedTitle = titleLine.replace(/第\d+条/, `第${articleRenumber[clause.id]}条`);
                       return (
                         <div key={clause.id} className="pl-4 border-l-2 border-[#ffd6e3]">
-                          <p className="font-semibold text-sm text-[#08131a] mb-1">{titleLine}</p>
+                          <p className="font-semibold text-sm text-[#08131a] mb-1">{renumberedTitle}</p>
                           <p className="text-sm text-[rgba(8,19,26,0.75)] leading-relaxed whitespace-pre-wrap">
                             {bodyLines.join("\n")}
                           </p>
