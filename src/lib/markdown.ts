@@ -22,15 +22,24 @@ export function generateMarkdown(data: ContractData): string {
   const lines: string[] = [];
   lines.push("# 婚前契約書\n");
   lines.push(`締結日：${dateStr}\n`);
+  const fmtBirthDate = (d: string) =>
+    d
+      ? new Date(d).toLocaleDateString("ja-JP", { year: "numeric", month: "long", day: "numeric" }) + "生"
+      : "　　年　　月　　日生";
+
+  const clauseMeta = {
+    ...meta,
+    partyA: { ...meta.partyA, name: "甲" },
+    partyB: { ...meta.partyB, name: "乙" },
+  };
+
   lines.push(`**甲（第一当事者）**`);
   lines.push(`氏名：${meta.partyA.name || "　　　　　"}`);
-  lines.push(`年齢：${meta.partyA.age || "　　"}歳`);
-  lines.push(`職業：${meta.partyA.occupation || "　　　　　"}`);
+  lines.push(`生年月日：${fmtBirthDate(meta.partyA.birthDate)}`);
   lines.push(`住所：${meta.partyA.address || "　　　　　"}\n`);
   lines.push(`**乙（第二当事者）**`);
   lines.push(`氏名：${meta.partyB.name || "　　　　　"}`);
-  lines.push(`年齢：${meta.partyB.age || "　　"}歳`);
-  lines.push(`職業：${meta.partyB.occupation || "　　　　　"}`);
+  lines.push(`生年月日：${fmtBirthDate(meta.partyB.birthDate)}`);
   lines.push(`住所：${meta.partyB.address || "　　　　　"}\n`);
   lines.push(
     `${A}（以下「甲」という）と${B}（以下「乙」という）は、婚姻に際して以下のとおり契約を締結する。\n`
@@ -59,7 +68,7 @@ export function generateMarkdown(data: ContractData): string {
     const chNumber = Number(chNum);
     lines.push(`\n## 第${chNumber}章　${chapterTitles[chNumber] || ""}\n`);
     for (const clause of clauses) {
-      const text = clause.template(answers, meta);
+      const text = clause.template(answers, clauseMeta);
       lines.push(text + "\n");
     }
   }
