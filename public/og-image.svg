@@ -56,16 +56,16 @@
     fill="rgba(8,19,26,0.52)"
     font-family="'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif"
     letter-spacing="1"
-  >質問に答えるだけで、二人のための婚前契約書ドラフトが自動作成できます</text>
+  >質問に答えるだけで婚前契約書ドラフトを自動作成！</text>
 
   <!-- Decorative dot row -->
-  <circle cx="552" cy="462" r="4.5" fill="#ff6b9d" opacity="0.55"/>
-  <circle cx="572" cy="462" r="4.5" fill="#ff6b9d" opacity="0.65"/>
-  <circle cx="592" cy="462" r="4.5" fill="#ff6b9d" opacity="0.80"/>
-  <circle cx="600" cy="462" r="5.5" fill="#ff6b9d"/>
-  <circle cx="608" cy="462" r="4.5" fill="#ff6b9d" opacity="0.80"/>
-  <circle cx="628" cy="462" r="4.5" fill="#ff6b9d" opacity="0.65"/>
-  <circle cx="648" cy="462" r="4.5" fill="#ff6b9d" opacity="0.55"/>
+  <circle cx="552" cy="462" r="4.5" fill="#ff6b9d" opacity="0.7"/>
+  <circle cx="572" cy="462" r="4.5" fill="#ff6b9d" opacity="0.7"/>
+  <circle cx="592" cy="462" r="4.5" fill="#ff6b9d" opacity="0.7"/>
+  <circle cx="612" cy="462" r="4.5" fill="#ff6b9d" opacity="0.7"/>
+  <circle cx="632" cy="462" r="4.5" fill="#ff6b9d" opacity="0.7"/>
+  <circle cx="652" cy="462" r="4.5" fill="#ff6b9d" opacity="0.7"/>
+  <circle cx="672" cy="462" r="4.5" fill="#ff6b9d" opacity="0.7"/>
 
   <!-- URL -->
   <text
@@ -75,5 +75,5 @@
     fill="#ff6b9d"
     font-family="'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif"
     opacity="0.85"
-  >tsubokulab.github.io/marriage-contract</text>
+  >https://tsubokulab.github.io/marriage-contract</text>
 </svg>
