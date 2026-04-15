@@ -265,7 +265,7 @@ export function Wizard() {
               <div>
                 <h2 className="text-2xl font-bold text-[#08131a]">📝 基本情報</h2>
                 <p className="text-sm text-[rgba(8,19,26,0.55)] mt-1">
-                  お二人の基本情報を入力してください
+                  お二人の基本情報を入力してください（スキップも可）
                 </p>
               </div>
               <button
