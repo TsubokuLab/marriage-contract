@@ -62,23 +62,14 @@
     letter-spacing="6"
   >ジェネレーター</text>
 
-  <!-- Description line 1 -->
+  <!-- Description -->
   <text
-    x="600" y="454"
+    x="600" y="468"
     text-anchor="middle"
     font-size="28"
     fill="rgba(8,19,26,0.62)"
     font-family="'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif"
-  >質問に答えるだけで、</text>
-
-  <!-- Description line 2 -->
-  <text
-    x="600" y="494"
-    text-anchor="middle"
-    font-size="28"
-    fill="rgba(8,19,26,0.62)"
-    font-family="'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif"
-  >お二人だけの婚前契約書ドラフトが作れます。</text>
+  >質問に答えるだけで、お二人だけの婚前契約書ドラフトが作れます。</text>
 
   <!-- URL -->
   <text
