@@ -25,7 +25,7 @@ export async function downloadPdf(data: ContractData): Promise<void> {
         month: "long",
         day: "numeric",
       })
-    : "　　年　　月　　日";
+    : blank("160px");
 
   const chapterTitles: Record<number, string> = {
     1: "財産・経済",
@@ -134,7 +134,7 @@ export async function downloadPdf(data: ContractData): Promise<void> {
       </div>
     </div>`;
 
-  const dateForFile = data.meta.date.replace(/-/g, "");
+  const dateForFile = data.meta.date ? data.meta.date.replace(/-/g, "") : "未定";
 
   const element = document.createElement("div");
   element.innerHTML = contentHtml;

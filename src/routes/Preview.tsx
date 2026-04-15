@@ -169,7 +169,7 @@ export function Preview() {
               婚前契約書
             </h1>
             <p className="text-center text-sm text-[rgba(8,19,26,0.5)] mb-8">
-              締結日：{formatDate(meta.date)}
+              締結日：{meta.date ? formatDate(meta.date) : <span className="border-b border-[rgba(8,19,26,0.4)] inline-block min-w-[120px]">&nbsp;</span>}
             </p>
 
             {/* Meta info */}

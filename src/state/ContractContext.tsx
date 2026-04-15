@@ -13,7 +13,7 @@ import { decodeFromUrl } from "../lib/share";
 
 // 初期値
 const defaultMeta: ContractMeta = {
-  date: new Date().toISOString().split("T")[0],
+  date: "",
   partyA: { name: "", birthDate: "", address: "" },
   partyB: { name: "", birthDate: "", address: "" },
 };

@@ -72,7 +72,7 @@ function MetaForm() {
       {/* Date */}
       <Card>
         <h3 className="font-semibold text-[#08131a] mb-4">📅 締結日</h3>
-        {field("締結日 *", meta.date, (v) => setMeta({ date: v }), "date")}
+        {field("締結日", meta.date, (v) => setMeta({ date: v }), "date")}
       </Card>
 
       {/* Party A */}
@@ -261,11 +261,21 @@ export function Wizard() {
         {step === "intro" && <IntroStep />}
         {step === "meta" && (
           <div>
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#08131a]">📝 基本情報</h2>
-              <p className="text-sm text-[rgba(8,19,26,0.55)] mt-1">
-                お二人の基本情報を入力してください
-              </p>
+            <div className="mb-6 flex items-start justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-bold text-[#08131a]">📝 基本情報</h2>
+                <p className="text-sm text-[rgba(8,19,26,0.55)] mt-1">
+                  お二人の基本情報を入力してください
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setStep({ chapterNumber: 1 })}
+                className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border border-[rgba(8,19,26,0.2)] text-[rgba(8,19,26,0.5)] hover:border-[rgba(8,19,26,0.4)] transition-all bg-white/70 flex-shrink-0"
+              >
+                <SkipForward size={12} />
+                スキップ
+              </button>
             </div>
             <MetaForm />
           </div>
@@ -289,17 +299,6 @@ export function Wizard() {
           </Button>
 
           <div className="flex items-center gap-2">
-            {step === "meta" && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setStep({ chapterNumber: 1 })}
-                className="flex items-center gap-1 text-sm text-[rgba(8,19,26,0.45)]"
-              >
-                <SkipForward size={14} />
-                スキップ
-              </Button>
-            )}
             <Button
               variant="secondary"
               onClick={() => navigate("/preview")}
